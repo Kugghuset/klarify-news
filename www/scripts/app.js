@@ -1,6 +1,8 @@
 'use strict'
 
+import './../style/main.scss';
 import routes from './routes';
 import $ from "jquery";
 
-$("#msgid").html("This is Hello World by JQuery");
+global.jQuery = require('jquery');
+var bootstrap = require('bootstrap');

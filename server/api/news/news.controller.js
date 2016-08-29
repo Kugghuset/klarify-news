@@ -8,10 +8,28 @@ import utils from '../../utils/utils';
  */
 export const getAll = (req, res) => {
     news.getAll()
-    .then((news) => res.status(200).json(news))
+    .then((newsItem) => res.status(200).json(newsItem))
+    .catch((err) => utils.handleError(res, err));
+}
+
+export const createNews = (req, res) => {
+    let _news = req.body;
+    news.create(_news)
+    .then((newsItem) => res.status(200).json(newsItem))
+    .catch((err) => utils.handleError(res, err));
+}
+
+export const updateNews = (req, res) => {
+    let {id} = req.params;
+    let _news = req.body;
+    console.log(_news);
+    news.update(id, _news)
+    .then((newsItem) => res.status(200).json(newsItem))
     .catch((err) => utils.handleError(res, err));
 }
 
 export default {
     all: getAll,
+    create: createNews,
+    update: updateNews,
 }

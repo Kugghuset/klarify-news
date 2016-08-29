@@ -4,6 +4,7 @@ INSERT INTO [dbo].[GoodNews]
         , [Good News]
         , [Date]
     )
+OUTPUT Inserted.[Name(s)], Inserted.[Good News], Inserted.[Date], Inserted.[ID], Inserted.[isDeleted]
 VALUES
     (
           @names

@@ -1,0 +1,28 @@
+<div class="container-fluid input-container">
+    <div class="row">
+
+        <div class="col-xs-1"></div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+            <label for="project">Good news:</label>
+            <input class="form-control input" type="text" v-model="news" id="project">
+            </div>
+        </div>
+
+        <div class="col-xs-2">
+            <div class="form-group">
+                <label for="person">Wizard:</label>
+            <input class="form-control input" type="text" v-model="name" id="person">
+            </div>
+        </div>
+
+        <div class="col-xs-1">
+            <div class="form-group">
+            <button id="postButton" type="button" class="btn btn-primary btn-lg add-button" v-on:click="post">Post news</button>
+            </div>
+        </div>
+
+        <div class="col-xs-1"></div>
+    </div>
+</div>

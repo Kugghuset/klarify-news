@@ -19,7 +19,9 @@ export default (app, log) => {
 
     /// Start inject routes ///
     app.use('/api/news/', require('./api/news').default);
+    app.use('/api/news/create', require('./api/news').default)
     app.use('/api/news/all', require('./api/news').default);
+    app.use('/api/news/update', require('./api/news').default);
     /// Stop inject routes ///
 
 }

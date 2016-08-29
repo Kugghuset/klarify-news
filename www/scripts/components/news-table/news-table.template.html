@@ -1,0 +1,33 @@
+<div class="container-fluid news">
+
+  <register-news :allnews.sync="news" ></register-news>
+
+  <div class="row">
+    <div class="col-xs-1"></div>
+
+    <div class="col-xs-10">
+    
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th class="info"><span style="display:block; width:400px;">News</span></th>
+                  <th class="info"><span style="display:block; width:100px;">Wizard</span></th>
+                  <th class="info"><span style="display:block; width:100px;">Action</span></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr v-for="newsitem in news | filterBy false in 'isDeleted'">
+                  <th><item-field fieldtype="String" :content.sync="newsitem['Good News']" :item.sync="newsitem"></item-field></th>
+                  <th><item-field fieldtype="String" :content.sync="newsitem['Name(s)']" :item.sync="newsitem"></item-field></th>
+                  <th><update-button title="Delete" :id="newsitem['ID']" :item.sync="newsitem"></update-button></th>
+              </tr>
+          </tbody>
+      </table>
+    
+    </div>
+
+    <div class="col-xs-1"></div>
+  </div>
+
+
+</div>
