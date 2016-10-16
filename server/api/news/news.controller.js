@@ -11,10 +11,10 @@ winston.add(winston.transports.File, { filename: 'logfile.log' });
  */
 export const getAll = (req, res) => {
     console.log(res.connection.remoteAddress);
-    console.log(res.headers['x-forwarded-for']);
+    console.log(res.headers);
     winston.info('New IP!');
     winston.log('info', res.connection.remoteAddress);
-    winston.log('info', res.headers['x-forwarded-for']);
+    winston.log('info', res.headers);
     news.getAll()
     .then((newsItem) => res.status(200).json(newsItem))
     .catch((err) => utils.handleError(res, err));
